@@ -20,9 +20,6 @@ public class User extends com.avaje.ebean.Model  {
     private String U_password;
 
     @OneToMany
-    private Contact contact;
-
-    @NotNull
     private List<Contact> contactList;
 
     public Long getU_id() {
