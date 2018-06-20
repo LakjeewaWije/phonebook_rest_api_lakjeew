@@ -1,64 +1,84 @@
 package com.lakjeew.phonebook.models;
 
+import com.avaje.ebean.Model;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-public class User extends com.avaje.ebean.Model  {
+public class User extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long U_id;
+    private Long uId;
     @NotNull
-    private String U_username;
+    private String uFirstname;
     @NotNull
-    private String U_email;
+    private String uLasttname;
     @NotNull
-    private String U_phone;
+    private String uEmail;
     @NotNull
-    private String U_password;
+    private String uPhoneno;
+    @NotNull
+    private String uPassword;
 
     @OneToMany(mappedBy = "user")
     private List<Contact> contactList;
 
-    public Long getU_id() {
-        return U_id;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setU_id(Long u_id) {
-        U_id = u_id;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
-    public String getU_username() {
-        return U_username;
+    public String getuFirstname() {
+        return uFirstname;
     }
 
-    public void setU_username(String u_username) {
-        U_username = u_username;
+    public void setuFirstname(String uFirstname) {
+        this.uFirstname = uFirstname;
     }
 
-    public String getU_email() {
-        return U_email;
+    public String getuLasttname() {
+        return uLasttname;
     }
 
-    public void setU_email(String u_email) {
-        U_email = u_email;
+    public void setuLasttname(String uLasttname) {
+        this.uLasttname = uLasttname;
     }
 
-    public String getU_phone() {
-        return U_phone;
+    public String getuEmail() {
+        return uEmail;
     }
 
-    public void setU_phone(String u_phone) {
-        U_phone = u_phone;
+    public void setuEmail(String uEmail) {
+        this.uEmail = uEmail;
     }
 
-    public String getU_password() {
-        return U_password;
+    public String getuPhoneno() {
+        return uPhoneno;
     }
 
-    public void setU_password(String u_password) {
-        U_password = u_password;
+    public void setuPhoneno(String uPhoneno) {
+        this.uPhoneno = uPhoneno;
+    }
+
+    public String getuPassword() {
+        return uPassword;
+    }
+
+    public void setuPassword(String uPassword) {
+        this.uPassword = uPassword;
+    }
+
+    public List<Contact> getContactList() {
+        return contactList;
+    }
+
+    public void setContactList(List<Contact> contactList) {
+        this.contactList = contactList;
     }
 }

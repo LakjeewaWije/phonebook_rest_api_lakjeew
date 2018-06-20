@@ -1,56 +1,88 @@
 package com.lakjeew.phonebook.models;
 
+import com.avaje.ebean.Model;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Contact extends com.avaje.ebean.Model {
+public class Contact extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long C_id;
+    private Long cId;
 
     @NotNull
-    private String C_name;
+    private String cName;
 
     @NotNull
-    private String C_mobile;
+    private String cMobile;
 
-    @NotNull
-    private String C_Email;
+
+    private String cOffice;
+
+
+    private String cHome;
+
+
+    private String cEmail;
 
     @ManyToOne
     private User user;
 
-    public Long getC_id() {
-        return C_id;
+    public Long getcId() {
+        return cId;
     }
 
-    public void setC_id(Long c_id) {
-        C_id = c_id;
+    public void setcId(Long cId) {
+        this.cId = cId;
     }
 
-    public String getC_name() {
-        return C_name;
+    public String getcName() {
+        return cName;
     }
 
-    public void setC_name(String c_name) {
-        C_name = c_name;
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 
-    public String getC_mobile() {
-        return C_mobile;
+    public String getcMobile() {
+        return cMobile;
     }
 
-    public void setC_mobile(String c_mobile) {
-        C_mobile = c_mobile;
+    public void setcMobile(String cMobile) {
+        this.cMobile = cMobile;
     }
 
-    public String getC_Email() {
-        return C_Email;
+    public String getcOffice() {
+        return cOffice;
     }
 
-    public void setC_Email(String c_Email) {
-        C_Email = c_Email;
+    public void setcOffice(String cOffice) {
+        this.cOffice = cOffice;
+    }
+
+    public String getcHome() {
+        return cHome;
+    }
+
+    public void setcHome(String cHome) {
+        this.cHome = cHome;
+    }
+
+    public String getcEmail() {
+        return cEmail;
+    }
+
+    public void setcEmail(String cEmail) {
+        this.cEmail = cEmail;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
