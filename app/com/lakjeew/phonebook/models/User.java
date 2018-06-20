@@ -19,7 +19,7 @@ public class User extends com.avaje.ebean.Model  {
     @NotNull
     private String U_password;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Contact> contactList;
 
     public Long getU_id() {
